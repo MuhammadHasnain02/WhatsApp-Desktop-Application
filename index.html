@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp</title>
+    <link rel="shortcut icon" href="images/favicon1.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -22,13 +23,13 @@
 
                 <!-- Chats Icon -->
                 <div class="">
-                    <span id="bfrClkChatIcn" aria-hidden="true" data-icon="chat-refreshed" class="">
+                    <span id="bfrClkChatIcn" aria-hidden="true" data-icon="chat-refreshed" class="hidden">
                         <svg title="Chats" viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="text-black hover:cursor-pointer" fill="none">
                             <title>chat</title>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M3.00013 9L0.940133 5.53C0.540219 4.86348 1.01283 4 1.79012 4H19.3335C20.8062 4 22.0001 5.19391 22.0001 6.66667V17.3333C22.0001 18.8061 20.8062 20 19.3335 20H5.6668C4.19404 20 3.00013 18.8061 3.00013 17.3333V9ZM5.00013 8.44603L3.53252 6H19.3335C19.7017 6 20.0001 6.29848 20.0001 6.66667V17.3333C20.0001 17.7015 19.7017 18 19.3335 18H5.6668C5.29861 18 5.00013 17.7015 5.00013 17.3333V8.44603Z" fill="currentColor"></path><path d="M7.00013 10C7.00013 9.44772 7.44785 9 8.00013 9H17.0001C17.5524 9 18.0001 9.44772 18.0001 10C18.0001 10.5523 17.5524 11 17.0001 11H8.00013C7.44785 11 7.00013 10.5523 7.00013 10Z" fill="currentColor"></path><path d="M7.00013 14C7.00013 13.4477 7.44785 13 8.00013 13H14.0001C14.5524 13 15.0001 13.4477 15.0001 14C15.0001 14.5523 14.5524 15 14.0001 15H8.00013C7.44785 15 7.00013 14.5523 7.00013 14Z" fill="currentColor"></path>
                         </svg>
                     </span>
-                    <span id="aftrClkChatIcn" aria-hidden="true" data-icon="chat-filled-refreshed" class="hidden">
+                    <span id="aftrClkChatIcn" aria-hidden="true" data-icon="chat-filled-refreshed" class="">
                         <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="text-black hover:cursor-pointer" fill="none">
                             <title>chat-filled-refreshed</title>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M22.0002 6.66667C22.0002 5.19391 20.8062 4 19.3335 4H1.79015C1.01286 4 0.540213 4.86348 0.940127 5.53L3.00016 9V17.3333C3.00016 18.8061 4.19406 20 5.66682 20H19.3335C20.8062 20 22.0002 18.8061 22.0002 17.3333V6.66667ZM7.00016 10C7.00016 9.44772 7.44787 9 8.00016 9H17.0002C17.5524 9 18.0002 9.44772 18.0002 10C18.0002 10.5523 17.5524 11 17.0002 11H8.00016C7.44787 11 7.00016 10.5523 7.00016 10ZM8.00016 13C7.44787 13 7.00016 13.4477 7.00016 14C7.00016 14.5523 7.44787 15 8.00016 15H14.0002C14.5524 15 15.0002 14.5523 15.0002 14C15.0002 13.4477 14.5524 13 14.0002 13H8.00016Z" fill="currentColor"></path>
@@ -122,7 +123,7 @@
 
     <!-- Second Column [Chats|Contacts] -->
     <section class="bg-white">
-        <div class="w-[432px] p-5 space-y-4 border-r-2 border-gray-300">
+        <div class="w-[432px] p-5 space-y-3.5 border-r-2 border-gray-300">
 
             <!-- Text & Icon Part -->
             <div class="flex flex-row justify-between">
@@ -177,10 +178,26 @@
 
             <!-- Button Group Part -->
             <div class="flex flex-row">
-                <div><button class="text-[15px] border border-gray-300 rounded-2xl px-2.5 py-1 mr-2 ">All</button></div>
-                <div><button class="text-[15px] border border-gray-300 rounded-2xl px-2.5 py-1 mr-2 ">Unread</button></div>
-                <div><button class="text-[15px] border border-gray-300 rounded-2xl px-2.5 py-1 mr-2 ">Favorites</button></div>
-                <div><button class="text-[15px] border border-gray-300 rounded-2xl px-2.5 py-1 mr-2 ">Groups</button></div>
+                <div>
+                    <button id="btnGrp_All" 
+                    class="text-[15px] text-[#15603E] bg-[#D9FDD3] border border-[#1DAA61] rounded-2xl px-3 py-1 mr-2 hover:cursor-pointer">
+                    All</button>
+                </div>
+                <div>
+                    <button id="btnGrp_Unread" 
+                    class="text-[15px] text-gray-600 border border-gray-300 rounded-2xl px-3 py-1 mr-2 hover:cursor-pointer">
+                    Unread</button>
+                </div>
+                <div>
+                    <button id="btnGrp_Favorites" 
+                    class="text-[15px] text-gray-600 border border-gray-300 rounded-2xl px-3 py-1 mr-2 hover:cursor-pointer">
+                    Favorites</button>
+                </div>
+                <div>
+                    <button id="btnGrp_Groups" 
+                    class="text-[15px] text-gray-600 border border-gray-300 rounded-2xl px-3 py-1 mr-2 hover:cursor-pointer">
+                    Groups</button>
+                </div>
             </div>
 
             <!-- Chats|Contacts Part -->
